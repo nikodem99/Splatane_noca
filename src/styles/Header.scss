@@ -1,0 +1,77 @@
+.header {
+    background-color: #e6f4d7; // Tło headera
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      // Style dla logo
+      display: flex;
+      align-items: center;
+      img {
+        height: 80px; // Ustawienie wysokości obrazka logo
+        width: auto; // Zachowanie proporcji obrazka
+    }
+    }
+
+    .menu-button {
+      display: none; // Domyślnie ukryty
+      background: none;
+      border: none;
+      font-size: 30px;
+      color: black;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      ul {
+        display: flex;
+        justify-content: flex-end; // Elementy menu będą po prawej stronie
+        list-style-type: none;
+        margin-left: auto;  // Odsuwa menu od logo
+        padding: 0;
+
+        li a {
+          text-decoration: none;
+          color: black;
+          font-size: 16px;
+          padding: 0 15px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-button {
+        display: block; // Wyświetl przycisk na mniejszych ekranach
+      }
+
+      .navbar {
+        display: none; // Ukryj menu na mniejszych ekranach
+        flex-direction: column;
+        align-items: center;
+
+        &.active {
+          display: flex; // Pokaż menu, gdy jest aktywne
+        }
+
+        ul {
+          width: 100%;
+          flex-direction: column; // Ustawienie elementów pionowo
+
+          li {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0; // Dodanie paddingu dla każdego elementu
+          }
+        }
+      }
+    }
+}

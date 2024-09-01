@@ -1,0 +1,128 @@
+html, body {
+  background: #F7F5E6;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.main-section {
+  padding: 0;
+  text-align: center;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    .slider-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); // Przyciemniona nakładka
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2; // Tekst na wierzchu, ale poniżej przycisków
+
+      h2 {
+        font-size: 2rem;
+        color: #ffffff;
+        margin: 0 0 8px 0;
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: #ffffff;
+      }
+    }
+
+    .slide_viewer {
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      .slide_group {
+        display: flex;
+        height: 100%;
+        position: relative;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      .slide {
+        flex-shrink: 0;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .slide_buttons {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      text-align: center;
+      z-index: 3; // Zwiększony z-index dla klikalności
+
+      .slide_btn {
+        color: #474544;
+        font-size: 42px;
+        margin: 0 0.175em;
+        transition: color 0.4s ease-in-out;
+        background: none;
+        border: none;
+
+        &.active, &:hover {
+          color: #428CC6;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .directional_nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 3; // Zwiększony z-index dla klikalności
+
+      .previous_btn, .next_btn {
+        cursor: pointer;
+        height: 65px;
+        width: 65px;
+        opacity: 0.5;
+        transition: opacity 0.4s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-section .slider .directional_nav {
+    .previous_btn {
+      left: 50px;
+    }
+    .next_btn {
+      right: 50px;
+    }
+  }
+}

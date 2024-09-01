@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;800&display=swap");
+
+.Contact2-text {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: white;
+  section {
+    padding: 3rem 0;
+    max-width: min(87.5rem, 90%);
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+
+    h2 {
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      margin-bottom: 1.563rem;
+      color: #1b1b1b;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 50rem;
+      margin-inline: auto;
+      color: #1b1b1b;
+    }
+
+    .pricing-cards {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8em;
+      margin-top: 5em;
+    }
+
+    .pricing-card {
+      flex: 0 1 18.75rem;
+      background: #fff;
+      text-align: center;
+      padding: 2.5em 2em;
+      border-radius: 0.625rem;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in;
+
+      &:hover {
+        background: #1b1b1b;
+        color: #fff;
+
+        .card-title, .features li, .card-btn, .card-price span {
+          color: #fff; // ensures all text turns white on hover
+        }
+
+        .card-btn {
+          background: #fff;
+          color: #1b1b1b;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .ribbon {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .card-title, .features, .card-btn {
+        color: #1b1b1b;
+      }
+
+      .ribbon {
+        position: absolute;
+        top: -0.625rem;
+        left: 1.563rem;
+        visibility: hidden;
+        opacity: 0;
+
+        width: 2.5rem;
+        height: 6.875rem;
+
+        div {
+          transform: rotate(-90deg);
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+
+      hr.first, hr.second {
+        display: block;
+        width: 35%;
+        margin: 0 auto;
+        margin-top: 1.875rem;
+        margin-bottom: 1.563rem;
+        background: #d6d4d3;
+        height: 0.156rem;
+        border: none;
+      }
+
+      hr.second {
+        background: #1b1b1b;
+        height: 0.25rem;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.063rem;
+      }
+
+      .card-price {
+        font-size: 3rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.563rem 0;
+
+        span {
+          font-size: 1.1rem;
+          margin-right: 0.625rem;
+        }
+      }
+
+      .card-btn {
+        background: #d6d4d3;
+        font-weight: bold;
+        font-size: 0.9rem;
+        padding: 0.5rem 1.875rem;
+        display: inline-block;
+        transition: opacity 0.3s ease-in, color 0.3s ease-in;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
